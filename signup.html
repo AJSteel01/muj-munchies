@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>MUJ Munchies | SignUp</title>
+</head>
+<body>
+    <style>
+        body {
+            color: #999;
+            background:url("https://media.istockphoto.com/vectors/vector-fast-food-pattern-fast-food-seamless-background-vector-id941391600?b=1&k=6&m=941391600&s=612x612&w=0&h=IPQzgBn4LjcwxtvzTtnyEeYP36MasrfRT-xmGARRfy4=");
+            font-family: 'Roboto', sans-serif;
+            background-repeat: repeat;
+        }
+        .form-control, .form-control:focus, .input-group-addon {
+            border-color: #e1e1e1;
+            border-radius: 0;
+        }
+        .signup-form {
+            width: 390px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        .signup-form h2 {
+            color: #636363;
+            margin: 0 0 15px;
+            text-align: center;
+        }
+        .signup-form .lead {
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .signup-form form {		
+            border-radius: 1px;
+            margin-bottom: 15px;
+            background: #fff;
+            border: 1px solid #f3f3f3;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+        .signup-form label {
+            font-weight: normal;
+            font-size: 13px;
+        }
+        .signup-form .form-control {
+            min-height: 38px;
+            box-shadow: none !important;
+            border-width: 0 0 1px 0;
+        }	
+        .signup-form .input-group-addon {
+            max-width: 42px;
+            text-align: center;
+            background: none;
+            border-bottom: 1px solid #e1e1e1;
+            padding-left: 5px;
+        }
+        .signup-form .btn, .signup-form .btn:active {        
+            font-size: 16px;
+            font-weight: bold;
+            background: #19aa8d !important;
+            border-radius: 3px;
+            border: none;
+            min-width: 140px;
+        }
+        .signup-form .btn:hover, .signup-form .btn:focus {
+            background: #179b81 !important;
+        }
+        .signup-form a {
+            color: #19aa8d;
+            text-decoration: none;
+        }	
+        .signup-form a:hover {
+            text-decoration: underline;
+        }
+        .signup-form .fa {
+            font-size: 21px;
+            position: relative;
+            top: 8px;
+        }
+        .signup-form .fa-paper-plane {
+            font-size: 17px;
+        }
+        .signup-form .fa-check {
+            color: #fff;
+            left: 9px;
+            top: 18px;
+            font-size: 7px;
+            position: absolute;
+        }
+        </style>
+        </head>
+        <body>
+
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+                <div class="container">
+                  <a href="index.html" class="navbar-brand">MUJ Munchies</a>
+                  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                </div>
+              </nav>
+        <div class="signup-form">	
+            <form action="#" method="post">
+                <h2>Create Account</h2>
+                <p class="lead">Sign Up and get your Munchies Account in less than 30 Seconds!</p>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+                    </div>
+                </div>        
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                </div>
+                <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+            </form>
+            <div class="text-center">Already have an account? <a href="index.html">Login here</a>.</div>
+        </div>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="text-center p-4 fixed-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <p>Copyright &copy;
+                <span id="year"></span> MUJ Munchies</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+    
+    
+    
+    
+    
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    
+        <script src="./src/app.js"></script>
+        
+       
+      <script>
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+    
+    
+        // Init Scrollspy
+        $('body').scrollspy({ target: '#main-nav' });
+    
+        // Smooth Scrolling
+        $("#main-nav a").on('click', function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+    
+            const hash = this.hash;
+    
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function () {
+    
+              window.location.hash = hash;
+            });
+          }
+        });
+    
+//         fetch('https://jsonplaceholder.typicode.com/todos/1')
+// .then(response => response.json())
+// .then(json => {
+//    document.querySelector('#cc').innerHTML
+//    ="<tr>menu</tr>"; 
+//    console.log("asdafa");
+// })
+    
+    
+        
+    
+    
+      </script>
+    
+</body>
+</html>

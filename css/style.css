@@ -1,0 +1,87 @@
+body {
+    background:#333;
+    
+    color:#fff;
+  }
+  
+  .navbar {
+    border-bottom: #eee 3px solid;
+    opacity: 0.9;
+    background: black !important;
+  }
+  .carousel-item {
+    height: 700px;
+  }
+  
+  .carousel-image-1 {
+    background: url("https://thumbs.dreamstime.com/b/indian-food-curry-butter-chicken-palak-paneer-chiken-tikka-biryani-vegetable-papad-dal-sabji-jira-alu-rice-saffron-dark-138549999.jpg");
+    background-size: cover;
+  }
+  
+  .carousel-image-2 {
+    background: url("https://images.all-free-download.com/images/graphiclarge/food_picture_01_hd_pictures_167558.jpg");
+    background-size: cover;
+  }
+  
+  .carousel-image-3 {
+    background: url("https://wallpaperaccess.com/full/271687.jpg");
+    background-size: cover;
+  }
+
+  #page-header {
+    height: 250px;
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-cartoon-black-food-poster-background-image_180049.jpg");
+    background-position: 0 -360px;
+    background-attachment: fixed;
+    color: #fff;
+    border-bottom: 1px #eee solid;
+    padding-top: 50px;
+    border-top: 1px #eee solid;
+  }
+
+  #page-header-contact {
+    height: 250px;
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-cartoon-black-food-poster-background-image_180049.jpg");
+    background-position: 0 -360px;
+    background-attachment: fixed;
+    color: #fff;
+    border-bottom: 1px #eee solid;
+    padding-top: 50px;
+    border-top: 1px #eee solid;
+  }
+
+
+  #faq{
+    border-top: 1px #eee solid;
+    border-bottom: 1px #eee solid;
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-cartoon-black-food-poster-background-image_180049.jpg");
+    background-position: 0 -360px;
+    background-attachment: fixed;
+
+  }
+
+
+  #faq .card {
+    border: #444;
+  }
+  
+  #faq a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #faq .card-body,
+  #faq .card-header {
+    background: #333;
+  }
+  
+
+  #main-footer {
+  
+    background: #000;
+    color: #fff;
+  }
+
+
+
+
