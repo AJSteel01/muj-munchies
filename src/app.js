@@ -1,3 +1,47 @@
+const app = new Vue({
+  el: "#restSection",
+  data() {
+    return {
+      restaurants: [],
+    };
+  },
+  computed: {
+    restGroups() {
+      let resultArray = [];
+      let tempArray = [];
+      for (let i = 0; i < this.restaurants.length; i++) {
+        if (i % 3 == 0 && i != 0) {
+          console.log(true);
+          resultArray.push(tempArray);
+          let tempArray = [];
+        }
+
+        tempArray.push(this.restaurants[i]);
+      }
+      console.log(`restGroups: ${resultArray}`);
+      return resultArray;
+    },
+  },
+  async created() {
+    const data = await this.fetchAndLoad(
+      "http://localhost:3030/api/restaurants"
+    );
+
+    console.log(data);
+    this.restaurants = data;
+  },
+  methods: {
+    async fetchAndLoad(url) {
+      const response = await fetch(url);
+
+      if (response.errors) throw new Error(response.errors[0].message);
+
+      const obj = await response.json();
+      return obj.data || obj;
+    },
+  },
+});
+
 //import { $ } from "../node_modules/jquery";
 //import { createPopper } from "@popperjs/core";
 
@@ -10,114 +54,111 @@ async function fetchAndLoad(url) {
   return obj.data || obj;
 }
 
-function createMenu(data, body) {
-  const targetFields = ["id", "name", "price"];
+// function createMenu(data, body) {
+//   const targetFields = ["id", "name", "price"];
 
-  data.forEach((dishes, index) => {
-    console.log(dishes);
-    const row = `<tr>
-    <td>${dish["id"]}</td>
-    <td>${dish["name"]}</td>
-    <td>${dish["price"]}</td>
-    </tr>`;
-    body.innerHTML += row;
-  });
-}
+//   data.forEach((dishes, index) => {
+//     console.log(dishes);
+//     const row = `<tr>
+//     <td>${dish["id"]}</td>
+//     <td>${dish["name"]}</td>
+//     <td>${dish["price"]}</td>
+//     </tr>`;
+//     body.innerHTML += row;
+//   });
+// }
 
-createMenu(fetchAndLoad("http://localhost:3030/api/restaurants/2?include=all"))
-// For CrazyChefs
-$("#restaurantModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/3?include=all"
-  );
+// createMenu(fetchAndLoad("http://localhost:3030/api/restaurants/2?include=all"))
+// // For CrazyChefs
+// $("#restaurantModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/3?include=all"
+//   );
 
-  createMenu(data.dishes);
-});
+//   createMenu(data.dishes);
+// });
 
-$("#restaurantModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("myTable");
+// $("#restaurantModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("myTable");
 
-  tableBody.innerHTML = "";
-});
+//   tableBody.innerHTML = "";
+// });
 
-//For Zaika
-$("#zaikaModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/1?include=all"
-  );
+// //For Zaika
+// $("#zaikaModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/1?include=all"
+//   );
 
-  createMenu(data.dishes);
-});
+//   createMenu(data.dishes);
+// });
 
-$("#zaikaModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("zaikaTable");
+// $("#zaikaModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("zaikaTable");
 
-  tableBody.innerHTML = "";
-});
+//   tableBody.innerHTML = "";
+// });
 
-//For Tandoor Se
-$("#tandoorModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/4?include=all"
-  );
+// //For Tandoor Se
+// $("#tandoorModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/4?include=all"
+//   );
 
-  createMenu(data.dishes);
-});
+//   createMenu(data.dishes);
+// });
 
-$("#tandoorModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("tandoorTable");
+// $("#tandoorModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("tandoorTable");
 
-  tableBody.innerHTML = "";
-});
+//   tableBody.innerHTML = "";
+// });
 
-//For Dev
-$("#devModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
-  );
+// //For Dev
+// $("#devModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/2?include=all"
+//   );
 
-  createMenu(data.dishes);
-});
+//   createMenu(data.dishes);
+// });
 
-$("#devModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("devTable");
+// $("#devModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("devTable");
 
-  tableBody.innerHTML = "";
-});
+//   tableBody.innerHTML = "";
+// });
 
-//For Lets Go
-$("#letsgoModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
-  );
-  const tableBody = document.getElementById("letsgoTable");
+// //For Lets Go
+// $("#letsgoModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/2?include=all"
+//   );
+//   const tableBody = document.getElementById("letsgoTable");
 
-  createMenu(data.dishes, tableBody);
-});
+//   createMenu(data.dishes, tableBody);
+// });
 
-$("#letsgoModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("letsgoTable");
+// $("#letsgoModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("letsgoTable");
 
-  tableBody.innerHTML = "";
-});
+//   tableBody.innerHTML = "";
+// });
 
-//For Saras
-$("#sarasModal").on("show.bs.modal", async function (e) {
-  const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
-  );
+// //For Saras
+// $("#sarasModal").on("show.bs.modal", async function (e) {
+//   const data = await fetchAndLoad(
+//     "http://localhost:3030/api/restaurants/2?include=all"
+//   );
 
-  createMenu(data.dishes);
-});
+//   createMenu(data.dishes);
+// });
 
-$("#sarasModal").on("hidden.bs.modal", function (e) {
-  const tableBody = document.getElementById("sarasTable");
+// $("#sarasModal").on("hidden.bs.modal", function (e) {
+//   const tableBody = document.getElementById("sarasTable");
 
-  tableBody.innerHTML = "";
-});
-
-
-
+//   tableBody.innerHTML = "";
+// });
 
 // $(document).ready(async (e) => {
 //   const restSection = document.getElementById("restSection");

@@ -111,13 +111,20 @@
         </section>
       
         <!-- Restaurants -->
+
         <section id="icon-boxes" class="p-5">
+          <div class="container" id="restSection">
+            <div class="row mb-4" v-for='restGroup in restGroups'></div>
+          </div>
+        </section>
+
+        <!-- <section id="icon-boxes" class="p-5">
           <div class="container" id="restSection">
             <div class="row mb-4">
               <div class="col-md-4">
                 <div class="card bg-dark text-white text-center">
                   <div class="card-body">
-                    <h3>{ZAIKA}</h3>
+                    <h3>ZAIKA</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam a placeat unde, esse saepe dignissimos facere? Nemo recusandae neque dolorum.</p>
                     <a href="#" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#zaikaModal">Order Now</a>
                   </div>
@@ -173,7 +180,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
         <!--Menu Modal-->
 
         <div class="modal text-dark" id="zaikaModal">
@@ -576,6 +583,7 @@
           crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
           crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
       
           <script type="module" src="./src/app.js"></script>
           
@@ -612,6 +620,7 @@
   //    console.log("asdafa");
   // })
       
+
       
           
       
