@@ -13,8 +13,8 @@ async function fetchAndLoad(url) {
 function createMenu(data, body) {
   const targetFields = ["id", "name", "price"];
 
-  data.forEach((dish, index) => {
-    console.log(dish);
+  data.forEach((dishes, index) => {
+    console.log(dishes);
     const row = `<tr>
     <td>${dish["id"]}</td>
     <td>${dish["name"]}</td>
@@ -24,11 +24,11 @@ function createMenu(data, body) {
   });
 }
 
-createMenu(fetchAndLoad('http://localhost:3030/api/restaurants/1'))
+createMenu(fetchAndLoad("http://localhost:3030/api/restaurants/2?include=all"))
 // For CrazyChefs
 $("#restaurantModal").on("show.bs.modal", async function (e) {
   const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
+    "http://localhost:3030/api/restaurants/3?include=all"
   );
 
   createMenu(data.dishes);
@@ -43,7 +43,7 @@ $("#restaurantModal").on("hidden.bs.modal", function (e) {
 //For Zaika
 $("#zaikaModal").on("show.bs.modal", async function (e) {
   const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
+    "http://localhost:3030/api/restaurants/1?include=all"
   );
 
   createMenu(data.dishes);
@@ -58,7 +58,7 @@ $("#zaikaModal").on("hidden.bs.modal", function (e) {
 //For Tandoor Se
 $("#tandoorModal").on("show.bs.modal", async function (e) {
   const data = await fetchAndLoad(
-    "http://localhost:3030/api/restaurants/2?include=all"
+    "http://localhost:3030/api/restaurants/4?include=all"
   );
 
   createMenu(data.dishes);
